@@ -1,0 +1,41 @@
+.ppt__cntnr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+.ptp__items {
+    background: var(--color-bg-variants);
+    padding: 1.3rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+.ptp__items:hover {
+    border-color: var(--color-primary-variants);
+    background: transparent;
+}
+.ptp__item-image {
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.ptp__items h3 {
+    margin: 1.2rem 0 2rem;
+}
+.ptp__item-cta {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 2rem;
+}
+@media screen and (max-width: 1024px) {
+    .ppt__cntnr {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ppt__cntnr {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
