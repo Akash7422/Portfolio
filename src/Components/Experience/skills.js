@@ -27,7 +27,7 @@ const frontend = [
       
       {
         id: 6,
-        skill: "Testetig",
+        skill: "Testing",
         level: "Expert"
       },
     
