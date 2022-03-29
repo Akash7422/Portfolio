@@ -1,6 +1,9 @@
 import React from 'react';
 import "./services.css";
 import {BiCheck} from "react-icons/bi";
+import Servicecards from './servicecards';
+import webdev from './servicelist';
+
 const services = () => {
     return (
         <section id='services'>
@@ -11,72 +14,33 @@ const services = () => {
             Services
         </h2>
            <div className='container ss__ctnr'>
-           <article className='ss'>
-           <div className='ss__head'>
-           <h3>UI/UX Design</h3>
-
-           </div>
-           <ul className='ss__list'>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               
-           </ul>
-           </article>
+           
            <article className='ss'>
            <div className='ss__head'>
            <h3>Web Development</h3>
 
            </div>
            <ul className='ss__list'>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
-               <li>
-               <BiCheck  className='ss__list__items'/>
-               The search supports synonyms. Try searching for "hamburger", or "logout".
-
-               </li>
+           {
+               webdev.map(webdev => (
+                   
+                (webdev.title==="webdev") ? <Servicecards list={webdev.list}/> : ""                  
+               ))
+           }
                
+           </ul>
+           </article>
+           <article className='ss'>
+           <div className='ss__head'>
+           <h3>Software Testing</h3>
+
+           </div>
+           <ul className='ss__list'>
+           {
+               webdev.map(webdev => (
+                (webdev.title==="Testing") ? <Servicecards list={webdev.list}/> : ""                  
+               ))
+           }
            </ul>
            </article>
           

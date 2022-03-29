@@ -1,7 +1,7 @@
 import React from 'react';
 import "./experience.css";
-import {BsFillPatchCheckFill} from "react-icons/bs";
-
+import Skillcards from './skillcards';
+import frontend, {backend} from "./skills";
 const experience = () => {
     return (
         <section id='exp'>
@@ -13,90 +13,26 @@ const experience = () => {
               Frontend Development
           </h3>
           <div className='exp_content'>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-          
-
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              CSS
-          </h4>
-          <small className='text-light'>Expierienced </small>
-           </div>
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-          </article>
-
+          {
+              frontend.map(frontend => (
+                <Skillcards skill={frontend.skill}
+                    level={frontend.level}
+                />
+              ))}        
           </div>
-
           </div>
           <div className='exp__backend'>
           <h3>
               Backend Development
           </h3>
           <div className='exp_content'>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-
-          </article>
-          <article  className='exp__details'>
-          <BsFillPatchCheckFill className='exp__details__icons'/>
-          <div> <h4>
-              HTML
-          </h4>
-          <small className='text-light'>Expierienced </small></div>
-
-          </article>
+          {
+              backend.map(backend => (
+                <Skillcards skill={backend.skill}
+                    level={backend.level} />
+              ))}
           </div>
-
           </div>
-
           </div>
         </section>
     )

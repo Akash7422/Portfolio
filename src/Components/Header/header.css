@@ -55,13 +55,13 @@ header {
 
 @media screen and (max-width: 1024px) {
     header {
-        height: 100vh;
+        height: 110rem;
     }
 }
 
 @media screen and (max-width: 600px) {
     header {
-        height: 100vh;
+        height: 110vh;
     }
     .header__socials {
         display: none;

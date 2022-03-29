@@ -4,6 +4,8 @@ import About_me from "../../assets/me-about.jpg";
 import {BsAwardFill} from "react-icons/bs";
 import {VscFolderActive} from 'react-icons/vsc';
 import {AiOutlineUser} from "react-icons/ai";
+import {FaBlackTie} from "react-icons/fa";
+
 const about = () => {
     return (
         <section id="about">
@@ -28,20 +30,20 @@ const about = () => {
                 </article>
 
                 <article className='about__card'>
-                <AiOutlineUser className='about__icon'/>
-                <h5> Experience</h5>
-                <small> 1.5+ yesr working </small>
+                <FaBlackTie className='about__icon'/>
+                <h5> Role</h5>
+                <small> Test Engineer </small>
                 
                 </article>
                 <article className='about__card'>
                 <VscFolderActive className='about__icon'/>
-                <h5> Experience</h5>
-                <small> 1.5+ yesr working </small>
+                <h5> Intrested</h5>
+                <small>Fullstack development</small>
                 
                 </article>
                 
             </div>
-            <p> Help us keep running If you don't mind tech related ads (no tracking or remarketing), and want to keep us running, please whitelist Material-UI in your blocker.Thank you! ❤️</p>
+            <p className='para'>Innovative software Engineer keen to tackle long-standing problems with novel insights into legacy systems and strategies. Applies personal knowledge and growing competencies to disrupting inefficient operations and stale product categories. Dedicated to offering growing insights to companies seeking to become industry leaders.</p>
             <a href='#contact' className='btn btn-primary'>Lets Talk</a>
 
 

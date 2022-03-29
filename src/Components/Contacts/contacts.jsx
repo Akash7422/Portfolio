@@ -8,35 +8,62 @@ import emailjs from "emailjs-com";
 
 
 const Contacts = () => {
-    const YOUR_SERVICE_ID= process.env.REACT_APP_YOUR_SERVICE_ID;
-    const YOUR_TEMPLATE_ID=process.env.REACT_APP_YOUR_TEMPLATE_ID;
-    console.log(YOUR_TEMPLATE_ID);
-    const YOUR_USER_ID=process.env.YOUR_USER_ID;
+    const [inputText, setInputText] = useState({
+        name:"",
+        email:"",
+        message:""
+    });
+    function handleChange(event) {
+        const { name, value } = event.target;
+    
+        setInputText(prevValue => {
+          if (name === "name") {
+            return {
+              name: value,
+              email: prevValue.email,
+              message: prevValue.message,
+              
+            };
+          }else if(name==="email"){
+            return {
+                name: prevValue.name,
+                email: value,
+                message: prevValue.lName,
+              };
+          }else if(name === "message"){
+            return {
+                name: prevValue.name,
+                email: prevValue.emai,
+                message:value,
+              };
+          }
+        });
+      }
     const form=useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm({YOUR_SERVICE_ID}, {YOUR_TEMPLATE_ID}, form.current, {YOUR_USER_ID})
+        emailjs.sendForm("service_ygvu0tp", "template_4ryfijy", form.current, "9EyYm66pWfIkcAp-v")
           .then((result) => {
               console.log(result.text);
+              alert("Mail  Sent Successfully.....");
+              setInputText(()=> {
+                  return{
+                    name:"",
+                    email:"",
+                    message:""
+                  }
+              }
+              );
           }, (error) => {
               console.log(error.text);
           });
       };
 
-      const [inputText, setInputText] = useState("");
-     
+    
 
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-  const [disable, setDisable] = React.useState(false);
-  function DisableAfterClick() {
-    alert("mail sent...");
-  }
     return (
         <section id="contact">
-            <h5>Get i touch</h5>
+            <h5>Get in touch</h5>
             <h2>
                 Contact Me
             </h2>
@@ -48,7 +75,7 @@ const Contacts = () => {
             <h5>
                 akashmk1998@gmail.com
             </h5>
-            <a href='mailto:akashmk1998@gmail.com'target="__blank"s>send a msg</a>
+            <a href='mailto:akashmk1998@gmail.com'target="__blank"s>send a message</a>
 
 
             </article>
@@ -58,7 +85,7 @@ const Contacts = () => {
             <h5>
                 Akash K
             </h5>
-            <a href='http://m.me/akashk.com' target="__blank">send a msg</a>
+            <a href='https://www.facebook.com/akashmk.akashmk.5/' target="__blank">send a message</a>
 
 
             </article>
@@ -68,14 +95,15 @@ const Contacts = () => {
             <h5>
                 Akash K
             </h5>
-            <a href='https://api.whatsapp.com/send?phone=+919108964269' target="__blank">send a msg</a>
+            <a href='https://api.whatsapp.com/send?phone=+919108964269' target="__blank">send a message</a>
             </article>
             </div>
             <form ref={form} onSubmit={sendEmail} >
-            <input  type="text" name="name" placeholder='Your full Name' required />
-            <input type="email" name="email" placeholder='Your Mail Name' required />
-            <textarea name="message" rows="7" placeholder='your message' required />
-            <button type='submit' className='btn btn-primary'>Contact me</button>
+            <input  onChange={handleChange} type="text" name="name" placeholder='Your full Name' value={inputText.name} required />
+            <input  onChange={handleChange} type="email" name="email" placeholder='Your Mail Id'  value={inputText.email} required />
+            <textarea  onChange={handleChange}  name="message" rows="7" placeholder='your message' value={inputText.message} required />
+            <button  type='submit' className='btn btn-primary'>Contact me</button>
+           
 
             </form>
 

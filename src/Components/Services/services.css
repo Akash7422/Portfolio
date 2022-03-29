@@ -31,7 +31,10 @@
 .ss__list {
     padding: 2rem;
 }
-
+.space__bt {
+    display: grid;
+    grid-template-columns: 2rem auto;
+}
 .ss__list li {
     display: flex;
     gap: 1rem;
@@ -40,7 +43,7 @@
 .ss__list__items {
     color: var(--color-primary);
     margin-top: 2px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 @media screen and (max-width: 1024px) {
     .ss__ctnr {

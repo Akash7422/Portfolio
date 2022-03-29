@@ -23,6 +23,9 @@
     .Footer_Footer__38bAj {
         display: none;
     }
+    .Phone__Bottom {
+        height: 6rem;
+    }
 }
 @media screen and (max-width: 600px) {
     .Footer_Footer__38bAj {
