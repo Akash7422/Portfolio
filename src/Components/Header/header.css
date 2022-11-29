@@ -1,14 +1,14 @@
 header {
-    height: 110vh;
+    height: 120vh;
     padding-top: 7rem;
     overflow: hidden;
+    box-shadow: 1rem #222;
 }
 
 .header__container {
     text-align: center;
     height: 100%;
     position: relative;
-    /*Added comment */
 }
 .cta {
     margin-top: 2.5rem;
@@ -36,13 +36,17 @@ header {
     /* background: var(--color-light); */
     background: linear-gradient(var(--color-primary), transparent);
     margin-top: 5rem;
-    width: 22rem;
-    height: 25rem;
     position: absolute;
-    left: calc(50% - 11rem);
+    left: 15%;
     border-radius: 2rem 2rem 0 0;
     overflow: hidden;
-    padding: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8),
+        0 6px 20px 0 rgba(3, 200, 239, 0.19);
+}
+.imgset {
+    width: 50rem;
+    height: 50rem;
+    padding-bottom: 20rem;
 }
 
 .scroll__down {
@@ -56,7 +60,16 @@ header {
 
 @media screen and (max-width: 1024px) {
     header {
-        height: 100vh;
+        height: 120vh;
+    }
+    .imgset {
+        width: 45rem;
+        height: 60rem;
+
+        padding-bottom: 30rem;
+    }
+    .me {
+        left: 9%;
     }
 }
 
@@ -69,5 +82,13 @@ header {
     }
     .scroll__down {
         display: none;
+    }
+    .imgset {
+        width: 25rem;
+        height: 65rem;
+        padding-bottom: 40rem;
+    }
+    .me {
+        left: 5%;
     }
 }
