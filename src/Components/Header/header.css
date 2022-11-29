@@ -83,13 +83,13 @@ header {
     .scroll__down {
         display: none;
     }
-    .imgset {
+   .imgset {
         width: 20rem;
         height: 40rem;
-        padding-bottom: 10rem;
+        padding-bottom: 20rem;
     }
     .zoom {
-        zoom: 85%;
+        zoom: 100%;
     }
     .me {
         left: 5%;
